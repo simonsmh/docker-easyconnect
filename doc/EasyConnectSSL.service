@@ -1,0 +1,11 @@
+[Unit]  
+Description=Service to automatically run sslservice.sh
+BindsTo=EasyMonitor.service
+After=EasyMonitor.service
+   
+[Service]  
+Type=simple
+ExecStart=/usr/local/sbin/ec_ssl_autorun.sh
+
+[Install]  
+WantedBy=multi-user.target
