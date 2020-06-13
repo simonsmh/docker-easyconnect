@@ -9,9 +9,17 @@ done
 )&
 
 # 登陆信息持久化处理
-rm /usr/share/sangfor/EasyConnect/resources/conf/easy_connect.json
-touch ~/easy_connect.json
-ln -s ~/easy_connect.json /usr/share/sangfor/EasyConnect/resources/conf/easy_connect.json
+infos='
+easy_connect.json
+ecagent_conf.json
+setting_root.json
+'
+for info in $infos
+do
+rm -f /usr/share/sangfor/EasyConnect/resources/conf/$info
+touch ~/$info
+ln -s ~/$info /usr/share/sangfor/EasyConnect/resources/conf/$info
+done
 
 export DISPLAY
 
