@@ -7,7 +7,7 @@ apt-get install -y --no-install-recommends --no-install-suggests \
 	dante-server tigervnc-standalone-server tigervnc-common dante-server psmisc flwm x11-utils
 
 RUN apt-get update && apt-get install -y --no-install-recommends --no-install-suggests busybox &&\
-busybox wget "http://download.sangfor.com.cn/download/product/sslvpn/pkg/linux_01/EasyConnect_x64.deb" -O /tmp/EasyConnect.deb &&\
+busybox wget "http://download.sangfor.com.cn/download/product/sslvpn/pkg/linux_767/EasyConnect_x64_7_6_7_3.deb" -O /tmp/EasyConnect.deb &&\
 dpkg -i /tmp/EasyConnect.deb && rm /tmp/EasyConnect.deb && apt-get purge -y busybox --auto-remove
 
 COPY ./docker-root /

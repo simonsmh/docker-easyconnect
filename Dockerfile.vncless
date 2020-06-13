@@ -7,7 +7,7 @@ apt-get install -y --no-install-recommends --no-install-suggests \
 	dante-server psmisc libxaw7 xclip
 
 RUN cd tmp && apt-get update && apt-get install -y --no-install-recommends --no-install-suggests busybox &&\
-busybox wget "http://download.sangfor.com.cn/download/product/sslvpn/pkg/linux_01/EasyConnect_x64.deb" -O EasyConnect.deb &&\
+busybox wget "http://download.sangfor.com.cn/download/product/sslvpn/pkg/linux_767/EasyConnect_x64_7_6_7_3.deb" -O EasyConnect.deb &&\
 dpkg -i EasyConnect.deb && apt download x11-utils && dpkg -x x11-utils_*.deb x11-utils && mkdir -p /usr/local/bin &&\
 cp x11-utils/usr/bin/xmessage /usr/local/bin && rm -r x11-utils* /tmp/EasyConnect.deb && apt-get purge -y busybox --auto-remove
 
