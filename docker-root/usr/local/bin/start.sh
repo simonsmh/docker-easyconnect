@@ -1,11 +1,12 @@
 #!/bin/bash
 
+
 # 在虚拟网络设备 tun0 打开时运行 proxy 代理服务器
-(while true
+(until [ -e /sys/class/net/tun0 ]
 do
 sleep 5
-[ -d /sys/class/net/tun0 ] && danted
 done
+danted
 )&
 
 # 登陆信息持久化处理
