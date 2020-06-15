@@ -35,8 +35,9 @@ then
 	[ -e ~/.vnc/passwd ] || (mkdir -p ~/.vnc && (echo password | tigervncpasswd -f > ~/.vnc/passwd)) 
 	[ -n "$PASSWORD" ] && printf %s "$PASSWORD" | tigervncpasswd -f > ~/.vnc/passwd
 
-	tigervncserver :1 -geometry 800x600 -localhost no -passwd ~/.vnc/passwd -xstartup flwm
 	DISPLAY=:1
+	tigervncserver -kill $DISPLAY
+	tigervncserver $DISPLAY -geometry 1600x900 -localhost no -passwd ~/.vnc/passwd -xstartup flwm
 fi
 
 exec start-sangfor.sh
